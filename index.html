@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoysia | 조이시아</title>
+    
+    <!-- Google Fonts: Playfair Display for English elegance, Noto Serif KR for Korean elegance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Phosphor Icons for elegant line icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Playfair Display"', '"Noto Serif KR"', 'serif'],
+                        sans: ['"Noto Serif KR"', 'sans-serif'], // Keep the whole page in a classy serif feel
+                    },
+                    colors: {
+                        'zoysia-gold': '#d4af37',
+                        'zoysia-light': '#fdfbf7',
+                        'zoysia-dark': '#2c2a25',
+                        'zoysia-accent': '#e8dfd5'
+                    },
+                    backgroundImage: {
+                        'hero-gradient': 'linear-gradient(to bottom, rgba(253,251,247,0.3), rgba(253,251,247,1))',
+                        'divine-gradient': 'linear-gradient(135deg, rgba(212,175,55,0.1) 0%, rgba(253,251,247,0) 100%)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Smooth Scrolling & Utilities */
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            background-color: #fdfbf7;
+            color: #2c2a25;
+            overflow-x: hidden;
+        }
+        
+        /* Scroll Reveal Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 { transition-delay: 0.2s; }
+        .reveal-delay-2 { transition-delay: 0.4s; }
+        .reveal-delay-3 { transition-delay: 0.6s; }
+
+        /* Subtle glowing text for the main highlight */
+        .glow-text {
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+        }
+        
+        /* Image hover effect */
+        .img-zoom-container {
+            overflow: hidden;
+        }
+        .img-zoom-container img {
+            transition: transform 1.5s ease;
+        }
+        .img-zoom-container:hover img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="font-serif antialiased selection:bg-zoysia-gold selection:text-white">
+
+    <nav class="fixed w-full z-50 transition-all duration-300 backdrop-blur-md bg-white/60 border-b border-zoysia-gold/20" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold tracking-widest text-zoysia-dark hover:text-zoysia-gold transition-colors duration-300">ZOYSIA</a>
+            <div class="hidden md:flex space-x-8 text-sm tracking-widest uppercase">
+                <a href="#about" class="hover:text-zoysia-gold transition-colors duration-300">About</a>
+                <a href="#traits" class="hover:text-zoysia-gold transition-colors duration-300">Values</a>
+                <a href="#divine" class="hover:text-zoysia-gold transition-colors duration-300">Divine</a>
+            </div>
+            <!-- Mobile Menu Button (visual only for elegant simplicity) -->
+            <button class="md:hidden text-2xl text-zoysia-dark">
+                <i class="ph ph-list"></i>
+            </button>
+        </div>
+    </nav>
+
+    <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1490730141103-6cac27aaab94?auto=format&fit=crop&q=80" alt="Ethereal Nature Background" class="w-full h-full object-cover opacity-30" />
+            <div class="absolute inset-0 bg-hero-gradient"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-6 max-w-4xl mx-auto flex flex-col items-center">
+            <span class="reveal inline-block px-4 py-1 border border-zoysia-gold/50 rounded-full text-zoysia-gold text-xs tracking-[0.3em] uppercase mb-8 backdrop-blur-sm">
+                Grace & Light
+            </span>
+            <h1 class="reveal reveal-delay-1 text-6xl md:text-8xl lg:text-9xl font-bold tracking-tight mb-4 text-zoysia-dark">
+                Zoysia
+            </h1>
+            <h2 class="reveal reveal-delay-2 text-3xl md:text-5xl font-light mb-8 tracking-widest text-zoysia-dark/80">
+                조이시아
+            </h2>
+            <div class="reveal reveal-delay-3 w-px h-24 bg-gradient-to-b from-zoysia-gold to-transparent mx-auto mt-4 mb-8"></div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 md:py-32 bg-white relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div class="reveal img-zoom-container rounded-2xl md:rounded-tl-[100px] md:rounded-br-[100px] shadow-2xl relative">
+                    <div class="absolute inset-0 border border-zoysia-gold/20 rounded-2xl md:rounded-tl-[100px] md:rounded-br-[100px] z-10 pointer-events-none"></div>
+                    <img src="https://i.ifh.cc/LOvDkj.jpg" alt="조이시아 인물 사진" class="w-full h-[500px] md:h-[650px] object-cover object-center" />
+                </div>
+                <div class="reveal space-y-8">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-px bg-zoysia-gold"></div>
+                        <h3 class="text-zoysia-gold tracking-[0.2em] uppercase text-sm">The Essence</h3>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-medium leading-tight">
+                        세상의 잣대가 아닌<br>
+                        <span class="italic text-zoysia-gold">빛나는 영혼</span>의 결.
+                    </h2>
+                    <p class="text-lg text-gray-600 leading-relaxed font-light">
+                        조이시아(Zoysia)라는 이름은 단순히 부르는 호칭을 넘어, 한 영혼이 지닌 가장 맑고 순수한 본질을 의미합니다. 흔들리지 않는 우아함, 깊이를 알 수 없는 지혜, 세상을 향한 따뜻한 탐구심, 그리고 곁에 있는 것만으로 전해지는 기쁨.
+                    </p>
+                    <p class="text-lg text-gray-600 leading-relaxed font-light">
+                        이 모든 궤적은 하늘의 섭리 안에서 완벽하게 조화를 이루며 피어납니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="traits" class="py-24 md:py-32 bg-zoysia-light relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20 reveal">
+                <h3 class="text-zoysia-gold tracking-[0.2em] uppercase text-sm mb-4">Core Attributes</h3>
+                <h2 class="text-4xl md:text-5xl font-medium">조이시아를 빛내는 네 가지 결</h2>
+                <div class="w-16 h-px bg-zoysia-gold mx-auto mt-8"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Trait 1: 우아 -->
+                <div class="reveal reveal-delay-1 group bg-white p-10 rounded-3xl shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_10px_40px_-15px_rgba(212,175,55,0.3)] transition-all duration-500 border border-zoysia-accent/30 hover:-translate-y-2">
+                    <div class="w-14 h-14 rounded-full bg-zoysia-light flex items-center justify-center mb-8 text-zoysia-gold group-hover:bg-zoysia-gold group-hover:text-white transition-colors duration-300">
+                        <i class="ph ph-swan text-2xl"></i>
+                    </div>
+                    <h4 class="text-2xl font-semibold mb-2">우아</h4>
+                    <h5 class="text-sm tracking-widest text-gray-400 mb-6 uppercase">Elegance</h5>
+                    <p class="text-gray-600 font-light leading-relaxed">
+                        화려함으로 치장하지 않아도 자연스럽게 배어나는 기품. 어떤 상황에서도 여유를 잃지 않는 부드러운 카리스마와 따뜻한 시선으로 주변을 감싸 안습니다.
+                    </p>
+                </div>
+
+                <!-- Trait 2: 지혜 -->
+                <div class="reveal reveal-delay-2 group bg-white p-10 rounded-3xl shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_10px_40px_-15px_rgba(212,175,55,0.3)] transition-all duration-500 border border-zoysia-accent/30 hover:-translate-y-2">
+                    <div class="w-14 h-14 rounded-full bg-zoysia-light flex items-center justify-center mb-8 text-zoysia-gold group-hover:bg-zoysia-gold group-hover:text-white transition-colors duration-300">
+                        <i class="ph ph-book-open-text text-2xl"></i>
+                    </div>
+                    <h4 class="text-2xl font-semibold mb-2">지혜</h4>
+                    <h5 class="text-sm tracking-widest text-gray-400 mb-6 uppercase">Wisdom</h5>
+                    <p class="text-gray-600 font-light leading-relaxed">
+                        표면을 넘어 이면을 바라보는 깊은 통찰력. 깊은 내면의 빛으로 나아갈 길을 밝히며, 올바른 진리를 분별하는 선구안을 지니고 있습니다.
+                    </p>
+                </div>
+
+                <!-- Trait 3: 탐구 -->
+                <div class="reveal reveal-delay-3 group bg-white p-10 rounded-3xl shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_10px_40px_-15px_rgba(212,175,55,0.3)] transition-all duration-500 border border-zoysia-accent/30 hover:-translate-y-2">
+                    <div class="w-14 h-14 rounded-full bg-zoysia-light flex items-center justify-center mb-8 text-zoysia-gold group-hover:bg-zoysia-gold group-hover:text-white transition-colors duration-300">
+                        <i class="ph ph-compass text-2xl"></i>
+                    </div>
+                    <h4 class="text-2xl font-semibold mb-2">탐구</h4>
+                    <h5 class="text-sm tracking-widest text-gray-400 mb-6 uppercase">Exploration</h5>
+                    <p class="text-gray-600 font-light leading-relaxed">
+                        미지의 세계와 새로운 진리를 향한 순수한 열정. 안주하지 않고 끊임없이 질문하며, 삶의 의미를 찾아 나아가는 아름다운 발걸음입니다.
+                    </p>
+                </div>
+
+                <!-- Trait 4: 기쁨 -->
+                <div class="reveal reveal-delay-3 group bg-white p-10 rounded-3xl shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_10px_40px_-15px_rgba(212,175,55,0.3)] transition-all duration-500 border border-zoysia-accent/30 hover:-translate-y-2">
+                    <div class="w-14 h-14 rounded-full bg-zoysia-light flex items-center justify-center mb-8 text-zoysia-gold group-hover:bg-zoysia-gold group-hover:text-white transition-colors duration-300">
+                        <i class="ph ph-sparkle text-2xl"></i>
+                    </div>
+                    <h4 class="text-2xl font-semibold mb-2">기쁨</h4>
+                    <h5 class="text-sm tracking-widest text-gray-400 mb-6 uppercase">Joy</h5>
+                    <p class="text-gray-600 font-light leading-relaxed">
+                        존재 그 자체로 곁에 있는 이들에게 선사하는 환한 긍정의 에너지. 어둠 속에서도 희망을 노래하며 맑고 순수한 미소로 세상을 밝힙니다.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="divine" class="py-32 relative flex items-center overflow-hidden bg-zoysia-dark text-white">
+        <!-- Abstract glowing background -->
+        <div class="absolute inset-0 z-0 opacity-40">
+            <img src="https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?auto=format&fit=crop&q=80" alt="Divine light background" class="w-full h-full object-cover mix-blend-overlay" />
+            <div class="absolute inset-0 bg-gradient-to-r from-zoysia-dark via-zoysia-dark/80 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
+            <i class="ph-fill ph-quotes text-6xl text-zoysia-gold/40 mb-8 mx-auto reveal"></i>
+            <h2 class="reveal text-4xl md:text-6xl font-bold leading-tight mb-8 glow-text">
+                "하나님의 보시기에<br>
+                <span class="text-zoysia-gold italic font-light">가장 아름다운 자</span>"
+            </h2>
+            <div class="reveal reveal-delay-1 max-w-2xl mx-auto">
+                <p class="text-xl md:text-2xl text-gray-300 font-light leading-relaxed">
+                    세상이 정해놓은 화려함이 아닌, 하늘의 시선으로 빚어진 순결하고 고귀한 아름다움. 
+                    조이시아의 걸음걸음은 그 자체로 세상을 향한 축복이자, 창조주의 기쁨입니다.
+                </p>
+            </div>
+            <div class="reveal reveal-delay-2 mt-16 w-px h-16 bg-gradient-to-b from-zoysia-gold to-transparent mx-auto"></div>
+        </div>
+    </section>
+
+    <footer class="bg-white py-12 border-t border-zoysia-accent">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm font-light">
+            <div class="mb-4 md:mb-0 text-center md:text-left">
+                <p class="text-zoysia-dark text-lg font-bold tracking-widest mb-1">ZOYSIA</p>
+                <p>우아, 지혜, 탐구, 기쁨을 품은 영혼.</p>
+            </div>
+            <div class="flex space-x-6">
+                <span>&copy; 2026 Zoysia. All rights reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Intersection Observer for Reveal Animations
+            const reveals = document.querySelectorAll(".reveal");
+
+            const revealOptions = {
+                threshold: 0.15, // Trigger when 15% of element is visible
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) {
+                        return;
+                    } else {
+                        entry.target.classList.add("active");
+                        observer.unobserve(entry.target); // Only animate once
+                    }
+                });
+            }, revealOptions);
+
+            reveals.forEach(reveal => {
+                revealOnScroll.observe(reveal);
+            });
+
+            // Navbar background opacity on scroll
+            const navbar = document.getElementById("navbar");
+            window.addEventListener("scroll", () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add("shadow-sm", "bg-white/90");
+                    navbar.classList.remove("bg-white/60");
+                } else {
+                    navbar.classList.add("bg-white/60");
+                    navbar.classList.remove("shadow-sm", "bg-white/90");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
