@@ -38,6 +38,7 @@
             }
         }
     </script>
+
     <style>
         /* Custom Smooth Scrolling & Utilities */
         html {
@@ -68,14 +69,14 @@
             text-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
         }
         
-        /* Image hover effect */
+        /* Image/Video hover effect */
         .img-zoom-container {
             overflow: hidden;
         }
-        .img-zoom-container img {
+        .img-zoom-container img, .img-zoom-container video {
             transition: transform 1.5s ease;
         }
-        .img-zoom-container:hover img {
+        .img-zoom-container:hover img, .img-zoom-container:hover video {
             transform: scale(1.05);
         }
     </style>
@@ -83,17 +84,24 @@
 <body class="font-serif antialiased selection:bg-zoysia-gold selection:text-white">
 
     <nav class="fixed w-full z-50 transition-all duration-300 backdrop-blur-md bg-white/60 border-b border-zoysia-gold/20" id="navbar">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center relative">
             <a href="#" class="text-2xl font-bold tracking-widest text-zoysia-dark hover:text-zoysia-gold transition-colors duration-300">ZOYSIA</a>
             <div class="hidden md:flex space-x-8 text-sm tracking-widest uppercase">
                 <a href="#about" class="hover:text-zoysia-gold transition-colors duration-300">About</a>
                 <a href="#traits" class="hover:text-zoysia-gold transition-colors duration-300">Values</a>
                 <a href="#divine" class="hover:text-zoysia-gold transition-colors duration-300">Divine</a>
             </div>
-            <!-- Mobile Menu Button (visual only for elegant simplicity) -->
-            <button class="md:hidden text-2xl text-zoysia-dark">
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-2xl text-zoysia-dark hover:text-zoysia-gold transition-colors duration-300">
                 <i class="ph ph-list"></i>
             </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white/95 backdrop-blur-md border-b border-zoysia-gold/20 shadow-lg flex flex-col py-4 px-6 space-y-4 text-center tracking-widest uppercase text-sm">
+            <a href="#about" class="mobile-link text-zoysia-dark hover:text-zoysia-gold transition-colors duration-300 py-2">About</a>
+            <a href="#traits" class="mobile-link text-zoysia-dark hover:text-zoysia-gold transition-colors duration-300 py-2">Values</a>
+            <a href="#divine" class="mobile-link text-zoysia-dark hover:text-zoysia-gold transition-colors duration-300 py-2">Divine</a>
         </div>
     </nav>
 
@@ -121,9 +129,11 @@
     <section id="about" class="py-24 md:py-32 bg-white relative">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-                <div class="reveal img-zoom-container rounded-2xl md:rounded-tl-[100px] md:rounded-br-[100px] shadow-2xl relative">
+                <div class="reveal img-zoom-container rounded-2xl md:rounded-tl-[100px] md:rounded-br-[100px] shadow-2xl relative bg-zoysia-light">
                     <div class="absolute inset-0 border border-zoysia-gold/20 rounded-2xl md:rounded-tl-[100px] md:rounded-br-[100px] z-10 pointer-events-none"></div>
-                    <img src="https://i.ifh.cc/LOvDkj.jpg" alt="조이시아 인물 사진" class="w-full h-[500px] md:h-[650px] object-cover object-center" />
+                    <a href="https://ifh.cc/v-zGJo4K" target="_blank" class="block w-full h-full cursor-pointer">
+                        <video src="https://i.ifh.cc/zGJo4K.mp4" muted autoplay loop playsinline class="w-full h-[500px] md:h-[650px] object-cover object-center"></video>
+                    </a>
                 </div>
                 <div class="reveal space-y-8">
                     <div class="flex items-center space-x-4">
@@ -207,6 +217,32 @@
         </div>
     </section>
 
+    <section id="presence" class="py-24 md:py-32 bg-white relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div class="reveal order-2 md:order-1 space-y-8">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-px bg-zoysia-gold"></div>
+                        <h3 class="text-zoysia-gold tracking-[0.2em] uppercase text-sm">The Presence</h3>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-medium leading-tight">
+                        머무는 자리마다<br>
+                        <span class="italic text-zoysia-gold">피어나는 향기</span>
+                    </h2>
+                    <p class="text-lg text-gray-600 leading-relaxed font-light">
+                        단순한 외면의 아름다움을 넘어, 깊은 내면에서부터 우러나오는 고요하고도 강인한 빛. 조이시아가 머무는 모든 공간과 시간은 그녀만의 따뜻하고 우아한 색채로 조화롭게 물듭니다.
+                    </p>
+                </div>
+                <div class="reveal order-1 md:order-2 img-zoom-container rounded-2xl md:rounded-tr-[100px] md:rounded-bl-[100px] shadow-2xl relative bg-zoysia-light">
+                    <div class="absolute inset-0 border border-zoysia-gold/20 rounded-2xl md:rounded-tr-[100px] md:rounded-bl-[100px] z-10 pointer-events-none"></div>
+                    <a href="https://ifh.cc/v-Jx1rTj" target="_blank" class="block w-full h-full cursor-pointer">
+                        <img src="https://i.ifh.cc/Jx1rTj.jpg" alt="Zoysia Presence" class="w-full h-[500px] md:h-[650px] object-cover object-center" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="divine" class="py-32 relative flex items-center overflow-hidden bg-zoysia-dark text-white">
         <!-- Abstract glowing background -->
         <div class="absolute inset-0 z-0 opacity-40">
@@ -218,7 +254,7 @@
             <i class="ph-fill ph-quotes text-6xl text-zoysia-gold/40 mb-8 mx-auto reveal"></i>
             <h2 class="reveal text-4xl md:text-6xl font-bold leading-tight mb-8 glow-text">
                 "하나님의 보시기에<br>
-                <span class="text-zoysia-gold italic font-light">가장 아름다운 자</span>"
+                <span class="text-zoysia-gold italic font-light"> 아름다운 자</span>"
             </h2>
             <div class="reveal reveal-delay-1 max-w-2xl mx-auto">
                 <p class="text-xl md:text-2xl text-gray-300 font-light leading-relaxed">
@@ -277,6 +313,22 @@
                     navbar.classList.add("bg-white/60");
                     navbar.classList.remove("shadow-sm", "bg-white/90");
                 }
+            });
+
+            // Mobile Menu Toggle Logic
+            const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+            const mobileMenu = document.getElementById("mobile-menu");
+            const mobileLinks = document.querySelectorAll(".mobile-link");
+
+            mobileMenuBtn.addEventListener("click", () => {
+                mobileMenu.classList.toggle("hidden");
+            });
+
+            // Close mobile menu when a link is clicked
+            mobileLinks.forEach(link => {
+                link.addEventListener("click", () => {
+                    mobileMenu.classList.add("hidden");
+                });
             });
         });
     </script>
